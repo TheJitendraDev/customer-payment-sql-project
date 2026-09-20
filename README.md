@@ -82,3 +82,31 @@ The `customer_id` column connects the `customer` and `payment` tables.
         amount
         mode
         payment_date
+
+
+Customer-Payment-Management-System/
+│
+├── README.md
+│
+├── sql/
+│   │
+│   ├── 01_create_database.sql
+│   ├── 02_create_tables.sql
+│   ├── 03_insert_data.sql
+│   ├── 04_basic_queries.sql
+│   ├── 05_aggregate_queries.sql
+│   ├── 06_join_queries.sql
+│   ├── 07_having_queries.sql
+│   ├── 08_subqueries.sql
+│   ├── 09_cte_queries.sql
+│   └── 10_views.sql
+│
+└── screenshots/
+    │
+    ├── customer_table.png
+    ├── payment_table.png
+    └── customer_payment_report.png
+
+
+
+
