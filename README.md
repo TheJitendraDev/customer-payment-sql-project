@@ -1,112 +1,90 @@
-# Customer & Payment Management System
+# 💳 Customer & Payment Management System
 
-A PostgreSQL-based database project designed to manage customer information and payment transactions. This project demonstrates practical SQL concepts including JOINs, GROUP BY, HAVING, aggregate functions, subqueries, CTEs, and SQL Views.
+<p align="center">
+  <strong>A PostgreSQL-based relational database project for managing customers, payments, and transaction analysis.</strong>
+</p>
 
----
-
-## 📌 Project Overview
-
-The **Customer & Payment Management System** is a relational database project developed using **PostgreSQL** and **SQL**.
-
-The system stores customer details and their payment transactions in separate relational tables. SQL queries are used to combine, filter, group, and analyze payment data to generate meaningful customer-wise reports.
-
-### Main Objectives
-
-- Store customer information
-- Store customer payment transactions
-- Establish relationships between customers and payments
-- Analyze payment transactions
-- Generate customer-wise payment reports
-- Perform aggregate calculations
-- Use advanced SQL queries for data analysis
+<p align="center">
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/SQL-Queries-orange?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL">
+  <img src="https://img.shields.io/badge/pgAdmin-4-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="pgAdmin">
+  <img src="https://img.shields.io/badge/Git-GitHub-black?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+</p>
 
 ---
 
-## 🛠️ Technologies Used
+## 📌 About the Project
 
-- PostgreSQL
-- SQL
-- pgAdmin 4
-- Git
-- GitHub
+**Customer & Payment Management System** is a practical **PostgreSQL and SQL project** developed to manage customer information and payment transactions using a relational database.
 
----
+The project demonstrates how customer and payment data can be stored, connected, filtered, grouped, and analyzed using SQL.
 
-## 🗄️ Database Structure
+It includes practical implementation of:
 
-The project contains two main tables:
-
-### 1. Customer Table
-
-The `customer` table stores customer information.
-
-| Column | Data Type | Constraint | Description |
-|---|---|---|---|
-| customer_id | BIGINT | PRIMARY KEY | Unique customer ID |
-| first_name | VARCHAR(50) | | Customer first name |
-| last_name | VARCHAR(50) | | Customer last name |
-| email | VARCHAR(100) | | Customer email |
-| address_id | BIGINT | | Address reference |
-
-### 2. Payment Table
-
-The `payment` table stores payment transaction information.
-
-| Column | Data Type | Constraint | Description |
-|---|---|---|---|
-| payment_id | BIGINT | PRIMARY KEY | Unique payment ID |
-| customer_id | BIGINT | FOREIGN KEY | Related customer |
-| amount | NUMERIC(10,2) | | Payment amount |
-| mode | VARCHAR(50) | | Payment method |
-| payment_date | DATE | | Payment date |
+- 🔗 JOINs
+- 📊 GROUP BY
+- 🔍 HAVING
+- ➕ Aggregate Functions
+- 🧩 Subqueries
+- 🔄 Common Table Expressions (CTEs)
+- 👁️ SQL Views
+- 🔑 Primary & Foreign Keys
 
 ---
 
-## 🔗 Database Relationship
+## 🎯 Project Objectives
 
-The `customer_id` column connects the `customer` and `payment` tables.
+The main objectives of this project are:
+
+- Store customer information in a structured relational table.
+- Store multiple payment transactions for each customer.
+- Establish relationships using Primary Key and Foreign Key.
+- Analyze customer payment transactions.
+- Generate customer-wise payment reports.
+- Calculate total, average, minimum, and maximum payments.
+- Analyze payment methods.
+- Practice advanced SQL queries using subqueries and CTEs.
+- Create reusable SQL reports using Views.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| 🐘 PostgreSQL | Relational Database |
+| 🧮 SQL | Data Management & Analysis |
+| 🖥️ pgAdmin 4 | Database Management Tool |
+| 🌿 Git | Version Control |
+| 🐙 GitHub | Project Hosting |
+
+---
+
+# 🗄️ Database Architecture
+
+The project contains two primary tables:
 
 ```text
-        CUSTOMER
-        --------
-        customer_id
-             |
-             |
-             | 1 : N
-             |
-             ↓
-        PAYMENT
-        -------
-        payment_id
-        customer_id
-        amount
-        mode
-        payment_date
-
-
-Customer-Payment-Management-System/
-│
-├── README.md
-│
-├── sql/
-│   │
-│   ├── 01_create_database.sql
-│   ├── 02_create_tables.sql
-│   ├── 03_insert_data.sql
-│   ├── 04_basic_queries.sql
-│   ├── 05_aggregate_queries.sql
-│   ├── 06_join_queries.sql
-│   ├── 07_having_queries.sql
-│   ├── 08_subqueries.sql
-│   ├── 09_cte_queries.sql
-│   └── 10_views.sql
-│
-└── screenshots/
-    │
-    ├── customer_table.png
-    ├── payment_table.png
-    └── customer_payment_report.png
-
-
-
-
+┌──────────────────────────────┐
+│          CUSTOMER            │
+├──────────────────────────────┤
+│ PK  customer_id             │
+│     first_name              │
+│     last_name               │
+│     email                   │
+│     address_id              │
+└──────────────┬───────────────┘
+               │
+               │ 1
+               │
+               │
+               │ N
+┌──────────────▼───────────────┐
+│           PAYMENT            │
+├──────────────────────────────┤
+│ PK  payment_id              │
+│ FK  customer_id             │
+│     amount                  │
+│     mode                    │
+│     payment_date            │
+└──────────────────────────────┘
