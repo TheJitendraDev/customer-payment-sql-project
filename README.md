@@ -13,6 +13,15 @@
 
 ---
 
+## 👨‍💻 Author
+
+### **Jitendra Behera**
+
+**B.Tech in Computer Science & Engineering**  
+**Indira Gandhi Institute of Technology, Sarang**
+
+---
+
 ## 📌 About the Project
 
 **Customer & Payment Management System** is a practical **PostgreSQL and SQL project** developed to manage customer information and payment transactions using a relational database.
@@ -66,7 +75,7 @@ The project contains two primary tables:
 
 ```text
 ┌──────────────────────────────┐
-│          CUSTOMER            │
+│           CUSTOMER           │
 ├──────────────────────────────┤
 │ PK  customer_id             │
 │     first_name              │
@@ -80,7 +89,7 @@ The project contains two primary tables:
                │
                │ N
 ┌──────────────▼───────────────┐
-│           PAYMENT            │
+│            PAYMENT           │
 ├──────────────────────────────┤
 │ PK  payment_id              │
 │ FK  customer_id             │
