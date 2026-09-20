@@ -1,0 +1,28 @@
+INSERT INTO customer
+(customer_id, first_name, last_name, email, address_id)
+VALUES
+(1, 'Jitendra', 'Behera', 'jitendra@gmail.com', 101),
+(2, 'Rahul', 'Das', 'rahul@gmail.com', 102),
+(3, 'Amit', 'Kumar', 'amit@gmail.com', 103),
+(4, 'Priya', 'Patra', 'priya@gmail.com', 104),
+(5, 'Sneha', 'Nayak', 'sneha@gmail.com', 105);
+
+
+
+INSERT INTO payment
+(payment_id, customer_id, amount, mode, payment_date)
+VALUES
+(101, 1, 500, 'UPI', '2026-01-05'),
+(102, 1, 1000, 'Card', '2026-01-10'),
+(103, 1, 700, 'UPI', '2026-02-15'),
+
+(104, 2, 300, 'Cash', '2026-01-20'),
+(105, 2, 800, 'UPI', '2026-02-10'),
+
+(106, 3, 1200, 'Card', '2026-01-25'),
+(107, 3, 500, 'UPI', '2026-02-20'),
+
+(108, 4, 1500, 'Card', '2026-02-05'),
+
+(109, 5, 400, 'Cash', '2026-02-15'),
+(110, 5, 900, 'UPI', '2026-03-01');

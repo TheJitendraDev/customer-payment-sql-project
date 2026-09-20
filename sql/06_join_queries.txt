@@ -1,0 +1,25 @@
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    p.amount,
+    p.mode,
+    p.payment_date
+FROM customer c
+JOIN payment p
+ON c.customer_id = p.customer_id;
+
+
+
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    SUM(p.amount) AS total_payment
+FROM customer c
+JOIN payment p
+ON c.customer_id = p.customer_id
+GROUP BY
+    c.customer_id,
+    c.first_name,
+    c.last_name;

@@ -1,0 +1,51 @@
+WITH customer_payment AS (
+    SELECT
+        customer_id,
+        SUM(amount) AS total_payment,
+        AVG(amount) AS average_payment,
+        COUNT(*) AS payment_count
+    FROM payment
+    GROUP BY customer_id
+)
+SELECT *
+FROM customer_payment;
+
+
+
+WITH customer_payment AS (
+    SELECT
+        customer_id,
+        SUM(amount) AS total_payment,
+        AVG(amount) AS average_payment,
+        COUNT(*) AS payment_count
+    FROM payment
+    GROUP BY customer_id
+)
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    cp.total_payment,
+    cp.average_payment,
+    cp.payment_count
+FROM customer c
+JOIN customer_payment cp
+ON c.customer_id = cp.customer_id
+ORDER BY cp.total_payment DESC;
+
+
+
+
+SELECT
+    mode,
+    COUNT(*) AS total_transactions,
+    SUM(amount) AS total_amount,
+    AVG(amount) AS average_amount
+FROM payment
+GROUP BY mode
+ORDER BY total_amount DESC;
+
+
+SELECT *
+FROM payment
+WHERE payment_date > '2026-02-01';

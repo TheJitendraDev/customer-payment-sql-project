@@ -1,0 +1,25 @@
+CREATE VIEW customer_payment_report AS
+SELECT
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    SUM(p.amount) AS total_payment,
+    AVG(p.amount) AS average_payment,
+    COUNT(p.payment_id) AS payment_count,
+    MIN(p.amount) AS minimum_payment,
+    MAX(p.amount) AS maximum_payment
+FROM customer c
+JOIN payment p
+ON c.customer_id = p.customer_id
+GROUP BY
+    c.customer_id,
+    c.first_name,
+    c.last_name;
+
+
+
+
+
+
+SELECT *
+FROM customer_payment_report;

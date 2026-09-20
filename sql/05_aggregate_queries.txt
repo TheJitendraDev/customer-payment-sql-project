@@ -1,0 +1,30 @@
+SELECT SUM(amount) AS total_payment
+FROM payment;
+
+SELECT AVG(amount) AS average_payment
+FROM payment;
+
+SELECT COUNT(*) AS total_payments
+FROM payment;
+
+SELECT MIN(amount) AS minimum_payment
+FROM payment;
+
+
+SELECT MAX(amount) AS maximum_payment
+FROM payment;
+
+SELECT customer_id, SUM(amount) AS total_payment
+FROM payment
+GROUP BY customer_id;
+
+
+SELECT
+    customer_id,
+    SUM(amount) AS total,
+    AVG(amount) AS average,
+    COUNT(*) AS count,
+    MIN(amount) AS minimum,
+    MAX(amount) AS maximum
+FROM payment
+GROUP BY customer_id;
